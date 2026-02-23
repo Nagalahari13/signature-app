@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Verify Signature</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+
+<div class="top-right-buttons">
+    {% if session.get('user') %}
+        <span style="margin-right:10px; font-weight:bold;">{{ session['user'] }}</span>
+        <a href="/logout"><button class="logout-btn">Logout</button></a>
+    {% endif %}
+</div>
+
+<div class="dashboard-container" style="max-width:450px;">
+
+    <h2>✔ Verify Signature</h2>
+
+    <form action="/verify" method="POST" enctype="multipart/form-data">
+
+        <label>Upload PDF:</label>
+        <input type="file" name="pdf_file" required class="input-box"><br><br>
+
+        <label>Upload Signature File:</label>
+        <input type="file" name="sig_file" required class="input-box"><br><br>
+
+        <button class="dashboard-btn" style="width:100%;">Verify</button>
+    </form>
+
+</div>
+
+</body>
+</html>

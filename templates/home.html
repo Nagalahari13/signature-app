@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+
+
+
+
+<div class="top-right-buttons">
+    {% if session.get('user') %}
+        <span style="margin-right: 10px; font-weight:bold;">{{ session['user'] }}</span>
+        <a href="/logout"><button class="logout-btn">Logout</button></a>
+    {% endif %}
+</div>
+
+<div class="dashboard-container">
+    <h1>📄 Digital Signature Dashboard</h1>
+    <p>Select an action below:</p>
+
+    <div class="dashboard-buttons">
+
+        <a href="/upload">
+            <button class="dashboard-btn">🔏 Upload & Sign PDF</button>
+        </a>
+
+        <a href="/verify">
+            <button class="dashboard-btn">✔ Verify Signature</button>
+        </a>
+
+        <a href="/logs">
+            <button class="dashboard-btn">📜 View Logs</button>
+        </a>
+
+        <a href="/files">
+            <button class="dashboard-btn">📁 Signed Files</button>
+        </a>
+
+    </div>
+</div>
+
+</body>
+</html>

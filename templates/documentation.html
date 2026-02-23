@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project Documentation</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+
+
+
+<div class="content-area">
+    <div class="dashboard-container">
+        <h1> * Digital Signature Web App – Documentation *</h1>
+
+        <h2>* Project Aim </h2>
+        <p>
+            This project implements a secure Digital Signature System using Flask and RSA cryptography.
+            Users can upload PDF files, sign them digitally, verify signatures, manage logs, and download signed files.
+        </p>
+
+        <h2>* Technologies Used</h2>
+        <ul style="text-align:left;">
+            <li>Python</li>
+            <li>Flask Web Framework</li>
+            <li>RSA Cryptography (cryptography library)</li>
+            <li>HTML & CSS</li>
+            <li>Frontend UI with pink Glow</li>
+        </ul>
+
+        <h2>* Features</h2>
+        <ul style="text-align:left;">
+            <li>User Login System</li>
+            <li>PDF Upload & Digital Signing</li>
+            <li>Signature Verification</li>
+            <li>View Logs</li>
+            <li>View Signed Files</li>
+            <li>Delete Files</li>
+            <li>pink UI Dashboard</li>
+        </ul>
+
+        <h2>* How Signing Works</h2>
+        <p>
+            1. User uploads a PDF<br>
+            2. PDF converted into bytes<br>
+            3. Private key signs hash using RSA<br>
+            4. Signature (.sig) file generated<br>
+        </p>
+
+        <h2>* How Verification Works</h2>
+        <p>
+            1. User uploads PDF + SIG file<br>
+            2. System reads PDF bytes<br>
+            3. Public key verifies RSA signature<br>
+            4. Validity shown on screen<br>
+        </p>
+
+        <h2>* Future Improvements</h2>
+        <ul style="text-align:left;">
+            <li>Add Database for users & files</li>
+            <li>JWT Authentication</li>
+            <li>Cloud Storage Integration</li>
+            <li>Digital Certificate Exporting</li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

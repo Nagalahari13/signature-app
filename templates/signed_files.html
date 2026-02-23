@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Signed Files</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+
+<div class="top-right-buttons">
+    {% if session.get('user') %}
+        <span style="margin-right:10px; font-weight:bold;">{{ session['user'] }}</span>
+        <a href="/logout"><button class="logout-btn">Logout</button></a>
+    {% endif %}
+</div>
+
+<div class="dashboard-container">
+
+    <h2>📁 Signed Files</h2>
+
+    {% if files %}
+        <ul style="text-align:left; list-style:none; padding:0;">
+            {% for f in files %}
+                <li style="margin:10px 0;">
+                    <b>{{ f }}</b>
+
+                    <a href="/download/{{ f }}">
+                        <button class="dashboard-btn" style="height:50px; width:150px;">Download</button>
+                    </a>
+
+                    <a href="/delete/{{ f }}" onclick="return confirm('Delete this file?')">
+                        <button class="dashboard-btn" style="height:50px; width:150px; background: #eb1088;;">
+                            Delete
+                        </button>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No files found.</p>
+    {% endif %}
+
+    <a href="/"><button class="dashboard-btn" style="margin-top:20px;">Back to Home</button></a>
+
+</div>
+
+</body>
+</html>
